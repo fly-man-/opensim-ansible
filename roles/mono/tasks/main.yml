@@ -1,0 +1,19 @@
+---
+- name: Add the Mono Project key by id from a keyserver
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+   
+- name: Add the Mono Repository
+   apt_repository:
+    repo: deb https://download.mono-project.com/repo/ubuntu stable-bionic main
+    state: present
+
+- name: Run the equivalent of "apt-get update" as a separate step
+  apt:
+    update_cache: yes
+    
+- name: Install latest version of "mono-complete"
+  apt:
+    name: mono-complete
+    state: latest
