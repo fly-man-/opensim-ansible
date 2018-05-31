@@ -1,0 +1,7 @@
+---
+- name: Clone OpenSim
+  git:
+    repo: git://opensimulator.org/git/opensim
+    dest: /download/opensim
+    version: 0.9.0
+    force: yes
