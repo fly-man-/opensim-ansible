@@ -1,0 +1,14 @@
+---
+- hosts: production
+  user: root
+  vars:
+    username: opensim
+    password: $6$lp3.5fc621vrSAIc$sz/g9H6oHEdeBb/6n5lS7L.ihfyontia4skxyOH26CINxUK03k7dsliDxHoKDaORV2i5pncTjRnLPzij3ykNX1
+    public_key: ~/.ssh/id_rsa.pub
+  roles: 
+   - common
+   - ufw
+   - user
+   - mariadb
+   - ssh
+   - opensim
